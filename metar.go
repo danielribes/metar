@@ -13,6 +13,8 @@ import (
 	"net/http"
 	"os"
 	"strings"
+
+	"metar/airports"
 )
 
 const urlapi string = "https://tgftp.nws.noaa.gov/data/observations/metar/stations/"
@@ -45,6 +47,7 @@ func main() {
 		// Aquesta API retorna un TXT amb dues línies
 		// - data/hora metar  [0]
 		// - previsió metar   [1]
+		fmt.Printf("Aeroport de %s\n", airports.AirportData[oaci])
 		fmt.Printf("%s\n", metar[1])
 		fmt.Printf("Ultima actualització: %s\n", metar[0])
 	}
