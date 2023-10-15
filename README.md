@@ -1,6 +1,6 @@
 # METAR
 
-METAR és un projecte personal per practicar Go i alhora una futura app web per mostrar informació METAR d'un aeroport de manera visual i descodififcada en diferents idiomes
+METAR és un projecte personal per practicar Go i alhora una futura app web per mostrar informació METAR d'un aeroport de manera visual i descodificada en diferents idiomes
 
 ## Enfoc
 
