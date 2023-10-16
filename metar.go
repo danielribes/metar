@@ -14,11 +14,12 @@ import (
 	"os"
 	"strings"
 
-	"metar/airports"
+	"github.com/danielribes/metar/airports"
 )
 
 const urlapi string = "https://tgftp.nws.noaa.gov/data/observations/metar/stations/"
 
+/*
 func main() {
 	if len(os.Args) < 2 {
 		help()
@@ -34,7 +35,7 @@ func main() {
 	fmt.Printf("%s\n", metar)
 	fmt.Printf("Ultima actualització: %s\n", data)
 
-}
+}*/
 
 func GetMETAR(oaci string) (string, string, string) {
 	var metar []string
