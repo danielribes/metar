@@ -24,8 +24,23 @@ func main() {
 		help()
 		os.Exit(1)
 	}
-	oaci := strings.ToUpper(os.Args[1])
-	urlmetar := urlapi + oaci + ".TXT"
+
+	metar, data, descripcio := GetMETAR(os.Args[1])
+
+	// Aquesta API retorna un TXT amb dues línies
+	// - data/hora metar  [0]
+	// - previsió metar   [1]
+	fmt.Printf("%s\n", descripcio)
+	fmt.Printf("%s\n", metar)
+	fmt.Printf("Ultima actualització: %s\n", data)
+
+}
+
+func GetMETAR(oaci string) (string, string, string) {
+	var metar []string
+
+	oacicode := strings.ToUpper(oaci)
+	urlmetar := urlapi + oacicode + ".TXT"
 
 	resp, err := http.Get(urlmetar)
 	if err != nil {
@@ -42,15 +57,10 @@ func main() {
 		}
 
 		metarinfo := string(metarraw)
-		metar := strings.Split(metarinfo, "\n")
-
-		// Aquesta API retorna un TXT amb dues línies
-		// - data/hora metar  [0]
-		// - previsió metar   [1]
-		fmt.Printf("Aeroport de %s\n", airports.AirportData[oaci])
-		fmt.Printf("%s\n", metar[1])
-		fmt.Printf("Ultima actualització: %s\n", metar[0])
+		metar = strings.Split(metarinfo, "\n")
 	}
+
+	return metar[1], metar[0], airports.AirportData[oacicode]
 }
 
 func help() {
