@@ -19,24 +19,6 @@ import (
 
 const urlapi string = "https://tgftp.nws.noaa.gov/data/observations/metar/stations/"
 
-/*
-func main() {
-	if len(os.Args) < 2 {
-		help()
-		os.Exit(1)
-	}
-
-	metar, data, descripcio := GetMETAR(os.Args[1])
-
-	// Aquesta API retorna un TXT amb dues línies
-	// - data/hora metar  [0]
-	// - previsió metar   [1]
-	fmt.Printf("%s\n", descripcio)
-	fmt.Printf("%s\n", metar)
-	fmt.Printf("Ultima actualització: %s\n", data)
-
-}*/
-
 func GetMETAR(oaci string) (string, string, string) {
 	var metar []string
 
