@@ -16,6 +16,10 @@ QNH 1017
 
 ```
 
+## Aplicacions
+
+* [showmetar](https://github.com/danielribes/showmetar) utilitza aquesta llibreria per mostrar per consola el METAR transcrit d'una aeroport concret.
+
 ## TODO
 
 * Filtrar que els codis OACI rebuts siguin d'aeroports reals
