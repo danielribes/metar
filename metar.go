@@ -63,9 +63,3 @@ func GetMETAR(oaci string) (string, string, string) {
 
 	return metar[1], metar[0], airports.AirportData[oacicode]
 }
-
-func help() {
-	fmt.Printf("metar 0.1\n")
-	fmt.Printf("--> Cal indicar un codi OACI d'aeroport\n\n")
-	fmt.Printf("Exemple: metar LELL\n")
-}
