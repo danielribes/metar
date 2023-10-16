@@ -5,7 +5,7 @@
 // a partir de l'API de https://tgftp.nws.noaa.gov/data/observations/metar
 //
 // ----------------------------------------------------------------------------
-package main
+package metar
 
 import (
 	"fmt"
